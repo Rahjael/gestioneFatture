@@ -1,11 +1,38 @@
 
 
 * {
+  border: 1px solid black;
 
 }
-
 
 body {
   display: flex;
-  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: center;
 }
+
+
+.mainTopMenuButton {
+  background: rgb(244, 222, 255);
+  color: rgb(171, 94, 190);
+  padding: 1vh;
+  font-size: 2vh;  
+}
+
+
+
+
+
+
+#mainTopMenu {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 70%;
+  justify-content: space-around;
+  margin: 1vh 0vh 5vh 0vh;
+}
+
+#mainTable {
+  visibility: hidden;
+}
+

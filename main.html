@@ -10,10 +10,59 @@
 <body>
   <h1 id="mainTitle">Gestione fatture</h1>
 
+  <div id="mainTopMenu">this is maintopmenu</div>
+  <div id="mainContent">this is maincontent</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
+  <script>
+    // TOP MENU HANDLER
+    let mainTopMenu = document.querySelector('#mainTopMenu');
+    mainTopMenu.innerHTML = '';
+
+    const buttons = ['Mostra tutte le fatture', 'Solo vendita', 'Solo acquisto'];
+
+    for(button of buttons) {
+      const newButton = document.createElement('button');
+      newButton.className = 'mainTopMenuButton';
+      newButton.innerText = button;
+      mainTopMenu.appendChild(newButton);
+    }
+
+    for(button of mainTopMenu.children) {
+      button.addEventListener( 'click', () => {
+        document.querySelector('#mainContent').innerText = Math.floor(Math.random() * 100);
+      })
+    }
+  </script>
+
+  <script>
+    // CONTENT HANDLER
+    const { ipcRenderer } = require('electron');
+
+    // TODO finish this, currently testing fetching
+
+    let invoices;
+
+    ipcRender.on('')
 
 
+
+  </script>
 
 
 </body>

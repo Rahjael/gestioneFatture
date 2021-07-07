@@ -52,7 +52,7 @@ class InvoicesManager {
     console.log("Parsed: ", parsedInvoices); // TODO comment out or delete
     return parsedInvoices;
   }
-  
+
   saveInvoicesInJSON() {
     let invoices = JSON.stringify(this.invoices);
     require('fs').writeFileSync('./invoices.json', invoices, (err) => {
@@ -62,6 +62,9 @@ class InvoicesManager {
     });
   }
 
+  getAllInvoices() {
+    return this.invoices;
+  }
 
 
 
