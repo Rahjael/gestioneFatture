@@ -1,0 +1,15 @@
+{
+  "name": "gestionefatture",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "electron": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^13.1.5",
+    "xml-js": "^1.6.11"
+  }
+}

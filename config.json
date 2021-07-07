@@ -1,0 +1,9 @@
+{
+  "debugMode": true,
+
+
+
+
+  "receivedInvoicesPath": "./xml/in",
+  "issuedInvoicesPath": "./xml/out"
+}
