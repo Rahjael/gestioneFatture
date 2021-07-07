@@ -2,7 +2,7 @@ const electron = require('electron');
 const fs = require('fs');
 const { getRawJSONInvoices } = require('./XMLUtils');
 const { InvoicesManager } = require('./InvoicesManager');
-const { ipcRenderer } = require('electron');
+const { ipcRenderer, ipcMain } = require('electron');
 
 const { app, BrowserWindow, screen } = electron;
 
@@ -25,10 +25,14 @@ const invoicesManager = new InvoicesManager(JSONinvoices);
 
 
 
-ipcMain.on('main:getAllInvoices', () => {
-  const data = invoicesManager.getAllInvoices();
-  mainWindow.webContents.send(data);
-})
+ipcMain.on('main:request', (event, request) => {
+  switch(request) {
+    case 'getAllInvoices': 
+      const data = invoicesManager.getAllInvoices();
+      mainWindow.webContents.send('main:response', data);
+      break;
+  }
+});
 
 
 

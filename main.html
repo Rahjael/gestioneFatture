@@ -31,6 +31,7 @@
   
   <script>
     // TOP MENU HANDLER
+    const { ipcRenderer } = require('electron');
     let mainTopMenu = document.querySelector('#mainTopMenu');
     mainTopMenu.innerHTML = '';
 
@@ -43,22 +44,32 @@
       mainTopMenu.appendChild(newButton);
     }
 
-    for(button of mainTopMenu.children) {
-      button.addEventListener( 'click', () => {
-        document.querySelector('#mainContent').innerText = Math.floor(Math.random() * 100);
-      })
-    }
+
+    mainTopMenu.children.item(0).addEventListener( 'click', () => { // Fist button // TODO implement better
+      ipcRenderer.send('main:request', 'getAllInvoices');
+    });
+
+    // for(button of mainTopMenu.children) {
+    //   button.addEventListener( 'click', () => {
+    //     document.querySelector('#mainContent').innerText = Math.floor(Math.random() * 100);
+    //   })
+    // }
   </script>
+
 
   <script>
     // CONTENT HANDLER
-    const { ipcRenderer } = require('electron');
+    if(typeof ipcRenderer === 'undefined' || ipcRenderer === null) {
+      const { ipcRenderer } = require('electron');
+    }
 
     // TODO finish this, currently testing fetching
 
     let invoices;
 
-    ipcRender.on('')
+    ipcRenderer.on('main:response', (event, data) => {
+      console.log("Data received: ", data);
+    })
 
 
 
