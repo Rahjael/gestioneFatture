@@ -3,7 +3,8 @@
 
 
 
-
   "receivedInvoicesPath": "./xml/in",
-  "issuedInvoicesPath": "./xml/out"
+  "issuedInvoicesPath": "./xml/out",
+
+  "lastXMLUpdate": ""
 }

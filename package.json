@@ -2,7 +2,7 @@
   "name": "gestionefatture",
   "version": "0.0.1",
   "description": "",
-  "main": "main.js",
+  "main": "app.js",
   "scripts": {
     "electron": "electron ."
   },

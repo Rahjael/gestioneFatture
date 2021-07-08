@@ -35,7 +35,10 @@
     let mainTopMenu = document.querySelector('#mainTopMenu');
     mainTopMenu.innerHTML = '';
 
-    const buttons = ['Mostra tutte le fatture', 'Solo vendita', 'Solo acquisto'];
+    const buttons = [ 'Mostra tutte le fatture', 
+                      'Solo vendita', 
+                      'Solo acquisto',
+                      'Solo non pagate'];
 
     for(button of buttons) {
       const newButton = document.createElement('button');
